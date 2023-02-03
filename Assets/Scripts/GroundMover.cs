@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnvironmentMover : MonoBehaviour
+public class GroundMover : MonoBehaviour
 {
     // Speed at which environment moves
-    private float movingSpeed = .7f;
+    private float movingSpeed = 3.0f;
 
     private const double BACKGROUND_LENGTH = 27.7;
-    private const double BACKGROUND_PAST_CAMERA = -12.8;
+    private const double BACKGROUND_PAST_CAMERA = -40.8;
 
     bool isMoving = true;
+
+
 
     private void Update()
     {
@@ -25,7 +27,7 @@ public class EnvironmentMover : MonoBehaviour
         if (transform.position.x <= BACKGROUND_PAST_CAMERA)
         {
             // Brings background that has gone passed the camera view to the front
-            transform.position += new Vector3((float)BACKGROUND_LENGTH,0,0);
+            Destroy(this.gameObject);
         }
     }
 
