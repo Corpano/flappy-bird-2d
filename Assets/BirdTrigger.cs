@@ -23,6 +23,7 @@ public class BirdTrigger : MonoBehaviour
         else if (other.CompareTag("Success"))
         {
             FindObjectOfType<GameManager>().OnScore();
+            Destroy(other.gameObject);
         }
     }
 }
