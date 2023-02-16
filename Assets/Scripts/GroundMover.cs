@@ -10,9 +10,7 @@ public class GroundMover : MonoBehaviour
     private const double BACKGROUND_LENGTH = 27.7;
     private const double BACKGROUND_PAST_CAMERA = -40.8;
 
-    bool isMoving = true;
-
-
+    public static bool isMoving = true;
 
     private void Update()
     {

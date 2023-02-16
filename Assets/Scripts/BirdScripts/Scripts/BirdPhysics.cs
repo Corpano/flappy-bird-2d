@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BirdPhysics : MonoBehaviour
 {
+    public AudioSource wingsFlapSoundEffect;
+
     private Rigidbody2D rb;
     private float playerVerticalVel = 0;
     private float playerHorizontalVel = 0;
@@ -26,8 +28,9 @@ public class BirdPhysics : MonoBehaviour
         playerHorizontalVel = this.rb.velocity.x;
         playerVerticalVel= this.rb.velocity.y;
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !GameManager.didLose)
         {
+            wingsFlapSoundEffect.Play();
             flyingForce = 20;
         }
     }
