@@ -33,7 +33,6 @@ public class BirdTrigger : MonoBehaviour
         {
             Destroy(other.gameObject);
             FindObjectOfType<GameManager>().OnScore();
-            Destroy(other.gameObject);
         }
     }
 }
